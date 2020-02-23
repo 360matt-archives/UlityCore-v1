@@ -1,0 +1,67 @@
+expressions:
+  period:
+    year: année
+    years: années
+    month: mois
+    months: mois
+    day: jour
+    days: jours
+    hour: heure
+    hours: heures
+    minute: minute
+    minutes: minutes
+    second: seconde
+    seconds: secondes
+  console: la console
+  unknown: inconnu
+  unknown_reason: raison inconnue
+stats:
+  enabled: "activé"
+  disabled: "désactivé"
+  enabled_colored: "&aactivé"
+  disabled_colored: "&cdésactivé"
+format:
+  player: joueur
+  world: monde
+  text: texte
+plugin:
+  reloaded: "&7Le plugin a bien été rechargé"
+  no_perm: "&cVous n'êtes pas en mesure de faire cela"
+  actual_lang: "&7La langue actuelle est le &bFrançais (FR)"
+  lang_reloaded: "&7La langue a été rechargée en &bFrançais (FR)"
+  syntax_notice: "&cSyntaxe: %syntax%"
+gamemode:
+  creative: créatif
+  survival: survie
+  adventure: aventure
+  spectator: spéctateur
+commands:
+  gamemode:
+    notification: "&7Votre mode de jeu a été changé en &6%gamemode%"
+    changed_player: "&7Mode de jeu de &b%player% &7changé en &6%gamemode%"
+    invalid_gamemode: "&cLe mode de jeu &6%gamemode% &cest invalide"
+    no_perm_other: "&7Vous ne pouvez pas changer le gamemode d'un autre joueur"
+  fly:
+    no_perm_other: "&7Vous ne pouvez pas modifier le fly d'un autre joueur"
+    notification: "&7Votre mode fly est %stat%"
+    changed_player: "&7Le mode fly de &b%player% &7est %stat%"
+  clc:
+    cleared: "&7Le chat a été clear par &b%staff% &7pour &c%reason%"
+  time:
+    changed: "&7Il fait désormais &e%time% &7dans le monde &6%world%"
+    day: jour
+    night: nuit
+  weather:
+    changed: "&7Le temps est défini &e%weather% &7dans le monde &6%world%"
+    sun: "ensoleillé"
+    rain: "pluvieux"
+    storm: "orageux"
+  back:
+    no_last_position: "&cVous n'avez pas de lieu à retourner"
+    teleported: "&7Vous avez été téléporté à votre dernier emplacement"
+
+error:
+  invalid_player: "&cLe joueur &6%name% &cest invalide"
+  invalid_world: "&cLe monde &6%world% &cest invalide"
+  empty_arg: "&cOoh non, l'argument est vide"
+  player_online: "&cSeul les joueurs peuvent faire cela"
