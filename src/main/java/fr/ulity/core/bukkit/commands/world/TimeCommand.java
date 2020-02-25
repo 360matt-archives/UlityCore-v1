@@ -38,7 +38,7 @@ public class TimeCommand implements CommandExecutor {
             return true;
         }
 
-        if (cmd.getName() == "day")
+        if (cmd.getName().equals("day"))
             world.setTime(1000);
         else
             world.setTime(14000);

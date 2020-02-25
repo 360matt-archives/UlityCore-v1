@@ -59,9 +59,27 @@ commands:
   back:
     no_last_position: "&cVous n'avez pas de lieu à retourner"
     teleported: "&7Vous avez été téléporté à votre dernier emplacement"
-
+  teleport:
+    no_perm_other: "&7Vous ne pouvez pas téléporter un autre joueur"
+    origin_notification: "&7Vous avez été téléporté à &b%name%"
+    target_notification: "&b%name% &7s'est téléporté à vous"
+    sender_notification: "&b%origin% &7a été téléporté à &b%target%"
+    waiting_delay: "&7Vous serez téléporté dans &e%seconds% secondes"
+    timed_out: "&cLe temps d'attente est écoulé depuis la dernière demande"
+    no_request: "&cVous n'avez pas de demande à accepter"
+    request_sent: "&7La demande a été envoyée à &b%name%"
+    request_tpa: "&b%name% &7souhaite se téléporter à vous\n
+    &7Vous avez &e%seconds% secondes &7pour accepter\n
+    &7Commandes: &a/tpyes &7ou &c/tpno"
+    already_sent: "&cVous avez déjà envoyé une demande à ce joueur"
+    response_sent: "&7Votre réponse a été envoyée"
+    request_refused: "&7Votre demande de téléportation a été &crefusée"
 error:
   invalid_player: "&cLe joueur &6%name% &cest invalide"
   invalid_world: "&cLe monde &6%world% &cest invalide"
   empty_arg: "&cOoh non, l'argument est vide"
-  player_online: "&cSeul les joueurs peuvent faire cela"
+  player_only: "&cSeul les joueurs peuvent faire cela"
+  player_disconnected: "&cLe joueur &7%name% &cs'est déconnecté"
+  x_bloqued_by_x: "&b%name1% &ca été bloqué par &b%name2%"
+  your_bloqued_by_x: "&cVous avez été bloqué par &b%name%"
+  cooldown: "&cTu dois attendre &e%time% &cpour refaire cela"

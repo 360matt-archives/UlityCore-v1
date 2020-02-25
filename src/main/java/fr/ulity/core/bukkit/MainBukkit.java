@@ -1,9 +1,6 @@
 package fr.ulity.core.bukkit;
 
-import fr.ulity.core.api.Api;
-import fr.ulity.core.api.Config;
-import fr.ulity.core.api.Lang;
-import fr.ulity.core.api.Temp;
+import fr.ulity.core.api.*;
 import fr.ulity.core.utils.Time;
 import org.bukkit.Server;
 import org.bukkit.plugin.PluginManager;
@@ -19,6 +16,7 @@ public class MainBukkit extends JavaPlugin {
 	public static PluginManager pMan;
 	public static Lang lang;
 	public static Temp temp;
+	public static Data data;
 
 
     @Override
@@ -33,6 +31,7 @@ public class MainBukkit extends JavaPlugin {
 
 		config = Api.config;
 		temp = Api.temp;
+		data = Api.data;
 
 
 		RegisterCommands.exec();

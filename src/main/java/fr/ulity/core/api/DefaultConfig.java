@@ -15,6 +15,9 @@ public class DefaultConfig extends Yaml {
     public void isBukkit(){
         setDefault("global.lang", "fr");
         setDefault("global.server-name", "&e[Beautiful server] ");
+        setDefault("teleport.delay", 5);
+        setDefault("teleport.timeout", 60);
+        setDefault("teleport.cooldown", 60);
     }
 
     public void isBungee(){

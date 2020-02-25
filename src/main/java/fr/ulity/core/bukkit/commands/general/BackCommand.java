@@ -14,7 +14,7 @@ public class BackCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if (!(sender instanceof Player))
-            sender.sendMessage(Lang.get("error.player_online"));
+            sender.sendMessage(Lang.get("error.player_only"));
         else{
             Location location = (Location) MainBukkit.temp.get("player." + sender.getName() + ".lastPosition");
 

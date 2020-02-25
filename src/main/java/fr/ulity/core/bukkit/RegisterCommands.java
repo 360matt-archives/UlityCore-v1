@@ -7,6 +7,9 @@ import fr.ulity.core.bukkit.commands.general.FlyCommand;
 import fr.ulity.core.bukkit.commands.moderation.BroadcastCommand;
 import fr.ulity.core.bukkit.commands.moderation.ClcCommand;
 import fr.ulity.core.bukkit.commands.principal.UlityCoreCommand;
+import fr.ulity.core.bukkit.commands.teleportation.TpNoCommand;
+import fr.ulity.core.bukkit.commands.teleportation.TpXCommand;
+import fr.ulity.core.bukkit.commands.teleportation.TpYesCommand;
 import fr.ulity.core.bukkit.commands.world.TimeCommand;
 import fr.ulity.core.bukkit.commands.world.WeatherCommand;
 
@@ -33,6 +36,11 @@ public class RegisterCommands {
         MainBukkit.plugin.getCommand("storm").setExecutor(new WeatherCommand());
 
         MainBukkit.plugin.getCommand("back").setExecutor(new BackCommand());
+
+        MainBukkit.plugin.getCommand("teleport").setExecutor(new TpXCommand());
+        MainBukkit.plugin.getCommand("tpa").setExecutor(new TpXCommand());
+        MainBukkit.plugin.getCommand("tpyes").setExecutor(new TpYesCommand());
+        MainBukkit.plugin.getCommand("tpno").setExecutor(new TpNoCommand());
 
     }
 

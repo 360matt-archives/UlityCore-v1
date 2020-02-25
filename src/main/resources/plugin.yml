@@ -100,6 +100,24 @@ commands:
     permissions:
       - plus
       - ulity.back
+  teleport:
+    aliases:
+      - tp
+    permissions:
+      - cheat
+      - ulity.teleport
+  tpa:
+    permissions:
+      - player
+      - ulity.tpa
+  tpyes:
+    permissions:
+      - player
+      - ulity.tpyes
+  tpno:
+    permissions:
+      - player
+      - ulity.tpno
   test:
     permissions:
       - ulityowner
