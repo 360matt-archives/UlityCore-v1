@@ -17,7 +17,7 @@ public class Lang {
         reload();
     }
 
-    private static void reload (){
+    public static void reload (){
         lang = new Config().getString("global.lang");
 
         InputStream reference = Lang.class.getResourceAsStream("/languages/" + Api.type + "/" + lang + ".yml");
