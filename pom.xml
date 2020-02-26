@@ -31,6 +31,22 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <shadedArtifactAttached>false</shadedArtifactAttached>
+                </configuration>
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -39,8 +55,6 @@
             </resource>
         </resources>
     </build>
-
-
     <repositories>
         <repository>
             <id>spigotmc-repo</id>
@@ -97,12 +111,6 @@
             <groupId>com.github.JavaFactoryDev</groupId>
             <artifactId>LightningStorage</artifactId>
             <version>3.0.7</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>1.7</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
