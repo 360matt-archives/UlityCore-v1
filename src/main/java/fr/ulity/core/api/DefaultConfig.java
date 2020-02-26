@@ -18,6 +18,7 @@ public class DefaultConfig extends Yaml {
         setDefault("teleport.delay", 5);
         setDefault("teleport.timeout", 60);
         setDefault("teleport.cooldown", 60);
+        setDefault("teleport.animation", true);
     }
 
     public void isBungee(){

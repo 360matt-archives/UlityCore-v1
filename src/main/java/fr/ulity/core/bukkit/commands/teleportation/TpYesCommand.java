@@ -20,7 +20,7 @@ public class TpYesCommand implements CommandExecutor {
         }
 
         if (MainBukkit.temp.get("player." + sender.getName() + ".lastTpRequest") == null){
-            sender.sendMessage(Lang.get("commands.teleport.no_request"));
+            sender.sendMessage(Lang.get("commands.tpyes.no_request"));
             return true;
         }
 
@@ -36,13 +36,13 @@ public class TpYesCommand implements CommandExecutor {
         int delay = MainBukkit.config.getInt("teleport.delay");
 
         if (delay != 0)
-            origin.sendMessage(Lang.get("commands.teleport.waiting_delay").replaceAll("%seconds%", String.valueOf(delay)));
+            origin.sendMessage(Lang.get("commands.tpyes.waiting_delay").replaceAll("%seconds%", String.valueOf(delay)));
 
         sender.sendMessage(Lang.get("commands.teleport.response_sent"));
 
         MainBukkit.server.getScheduler().scheduleSyncDelayedTask(MainBukkit.plugin, new Runnable() {
             public void run() {
-                if (!((Player) sender).isOnline()) {
+                if (!origin.isOnline()) {
                     sender.sendMessage(Lang.get("error.player_disconnected").replaceAll("%name%", origin.getName()));
                     return;
                 }
@@ -53,7 +53,7 @@ public class TpYesCommand implements CommandExecutor {
 
                 origin.teleport((Player) sender);
 
-                origin.sendMessage(Lang.get("commands.teleport.origin_notification")
+                origin.sendMessage(Lang.get("commands.teleport.notification.to_player")
                         .replaceAll("%name%", sender.getName()));
 
             }

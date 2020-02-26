@@ -21,7 +21,7 @@ import fr.ulity.core.bukkit.particles.utils.UtilParticle;
 
 public class Satan {
 	public static ArrayList<ArmorStand> as = new ArrayList<ArmorStand>();
-	
+
 	@SuppressWarnings("deprecation")
 	public static void run (Player player) {
 		Location loc = player.getLocation();

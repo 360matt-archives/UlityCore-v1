@@ -61,19 +61,35 @@ commands:
     teleported: "&7Vous avez été téléporté à votre dernier emplacement"
   teleport:
     no_perm_other: "&7Vous ne pouvez pas téléporter un autre joueur"
-    origin_notification: "&7Vous avez été téléporté à &b%name%"
-    target_notification: "&b%name% &7s'est téléporté à vous"
-    sender_notification: "&b%origin% &7a été téléporté à &b%target%"
-    waiting_delay: "&7Vous serez téléporté dans &e%seconds% secondes"
     timed_out: "&cLe temps d'attente est écoulé depuis la dernière demande"
-    no_request: "&cVous n'avez pas de demande à accepter"
-    request_sent: "&7La demande a été envoyée à &b%name%"
-    request_tpa: "&b%name% &7souhaite se téléporter à vous\n
-    &7Vous avez &e%seconds% secondes &7pour accepter\n
-    &7Commandes: &a/tpyes &7ou &c/tpno"
     already_sent: "&cVous avez déjà envoyé une demande à ce joueur"
     response_sent: "&7Votre réponse a été envoyée"
+
+
+    syntax_player: "&6Voici les syntaxes de cette commande:\n
+    &c&k** &8/tp &7x y z &3[joueur]\n
+    &c&k** &8/tp &7joueur &3[cible]\n"
+
+    notification:
+      to_coords: "&7Téléportation aux coordonnées demandée en cours ..."
+      to_player: "&7Téléportation au joueur &b%name% &7en cours ..."
+
+    sender:
+      to_coords: "&7Téléportation de &b%name% &7aux coordonnées données"
+      to_player: "&7Téléportation de &b%name% &7vers &b%target%"
+  tpa:
+    request: "&b%name% &7souhaite se téléporter à vous\n
+        &7Vous avez &e%seconds% secondes &7pour accepter\n
+        &7Commandes: &a/tpyes &7ou &c/tpno"
+    request_sent: "&7La demande a été envoyée à &b%name%"
+  tpyes:
+    waiting_delay: "&7Vous serez téléporté dans &e%seconds% secondes"
+    no_request: "&cVous n'avez pas de demande à accepter"
+  tpno:
+    no_request: "&cVous n'avez pas de demande à refuser"
     request_refused: "&7Votre demande de téléportation a été &crefusée"
+
+
 error:
   invalid_player: "&cLe joueur &6%name% &cest invalide"
   invalid_world: "&cLe monde &6%world% &cest invalide"

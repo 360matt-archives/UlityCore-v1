@@ -19,7 +19,7 @@ public class TpNoCommand implements CommandExecutor {
         }
 
         if (MainBukkit.temp.get("player." + sender.getName() + ".lastTpRequest") == null){
-            sender.sendMessage(Lang.get("commands.teleport.no_request"));
+            sender.sendMessage(Lang.get("commands.tpno.no_request"));
             return true;
         }
 
@@ -31,7 +31,7 @@ public class TpNoCommand implements CommandExecutor {
         MainBukkit.temp.set("player." + sender.getName() + ".lastTpRequest", null);
 
         Player origin = MainBukkit.server.getPlayer(MainBukkit.temp.getString("player." + sender.getName() + ".lastTpRequest.name"));
-        origin.sendMessage(Lang.get("commands.teleport.request_refused"));
+        origin.sendMessage(Lang.get("commands.tpno.request_refused"));
 
         sender.sendMessage(Lang.get("commands.teleport.response_sent"));
 

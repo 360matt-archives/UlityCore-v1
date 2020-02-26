@@ -23,6 +23,7 @@ public class MainBukkit extends JavaPlugin {
     public void onEnable(){
 		System.setProperty("file.encoding", "UTF-8");
 
+
     	plugin = this;
     	server = this.getServer();
     	pMan = server.getPluginManager();

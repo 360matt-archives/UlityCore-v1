@@ -14,10 +14,10 @@ public class Lang {
     public static String lang;
 
     public Lang (){
-        init();
+        reload();
     }
 
-    private static void init (){
+    private static void reload (){
         lang = new Config().getString("global.lang");
 
         InputStream reference = Lang.class.getResourceAsStream("/languages/" + Api.type + "/" + lang + ".yml");
@@ -65,17 +65,8 @@ public class Lang {
             langC = new Config(lang, "languages");
     }
 
-    public static void reload (){
-        init();
-    }
-
     public static String get (String key){
-        String value = "";
-        try {
-            value = new String(langC.getString(key).getBytes("ISO-8859-1"),"UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        String value = langC.getString(key);
 
         return value
                 .replaceAll("&", "§")

@@ -14,8 +14,12 @@ public class Tornado {
 	// je suis pas un batard je fournie mes sources
 	// toutes les particles viennent de cette personne
 
+
 	public static void run (Player player) {
-		Location location = player.getLocation();
+		run(player.getLocation());
+	}
+
+	public static void run (Location loc) {
 		new BukkitRunnable() {
 			int angle = 0;
 			@Override
@@ -30,7 +34,7 @@ public class Tornado {
 						double radius = y * radius_increasement;
 						double x = Math.cos(Math.toRadians(360/lines*l + y*30 - angle)) * radius;
 						double z = Math.sin(Math.toRadians(360/lines*l + y*30 - angle)) * radius;
-						UtilParticle.sendParticle(location.clone().add(x,y,z), Particle.CLOUD, 1, new Vector(0, 0, 0), 0.0F);
+						UtilParticle.sendParticle(loc.clone().add(x,y,z), Particle.CLOUD, 1, new Vector(0, 0, 0), 0.0F);
 					}
 				}
 				angle++;
