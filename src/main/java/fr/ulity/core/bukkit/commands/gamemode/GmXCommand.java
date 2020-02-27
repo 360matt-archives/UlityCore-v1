@@ -24,8 +24,7 @@ public class GmXCommand implements CommandExecutor {
                 target = MainBukkit.server.getPlayer(args[0]);
             else
                 sender.sendMessage(Syntax.notice(command.getName(), new String[]{"[player]"}));
-        }
-        else{
+        } else {
             if (args.length == 1)
                 target = MainBukkit.server.getPlayer(args[0]);
             else
@@ -34,8 +33,8 @@ public class GmXCommand implements CommandExecutor {
 
         if (target == null)
             sender.sendMessage(Lang.get("error.invalid_player")
-                .replaceAll("%name%", args[0]));
-        else{
+                    .replaceAll("%name%", args[0]));
+        else {
             GameMode final_gm = null;
 
             if (command.getName().equals("gmc"))

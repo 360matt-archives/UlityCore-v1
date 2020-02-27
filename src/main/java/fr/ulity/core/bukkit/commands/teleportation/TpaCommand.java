@@ -16,33 +16,30 @@ public class TpaCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
-        if (!(sender instanceof Player)){
+        if (!(sender instanceof Player)) {
             sender.sendMessage(Lang.get("error.player_only"));
             return true;
-        }
-        else{
-            if (args.length != 1){
+        } else {
+            if (args.length != 1) {
                 sender.sendMessage(Syntax.notice(cmd.getName(), new String[]{"player"}));
                 return true;
-            }
-            else{
+            } else {
                 Player target = MainBukkit.server.getPlayer(args[0]);
 
-                if (target == null){
+                if (target == null) {
                     sender.sendMessage(Lang.get("error.invalid_player").replaceAll("%name%", args[0]));
                     return true;
-                }
-                else{
+                } else {
                     if (MainBukkit.data.getList("player." + target.getName() + ".blocked") != null) {
                         if (MainBukkit.data.getList("player." + target.getName() + ".blocked").contains(sender.getName())) {
-                                sender.sendMessage(Lang.get("error.your_bloqued_by_x")
-                                        .replaceAll("%name%", target.getName()));
+                            sender.sendMessage(Lang.get("error.your_bloqued_by_x")
+                                    .replaceAll("%name%", target.getName()));
 
                             return true;
                         }
                     }
 
-                    if (MainBukkit.temp.getString("player." + target.getName() + ".lastTpRequest.name").equals(sender.getName())){
+                    if (MainBukkit.temp.getString("player." + target.getName() + ".lastTpRequest.name").equals(sender.getName())) {
                         sender.sendMessage(Lang.get("commands.tpa.already_sent"));
                         return true;
                     }
@@ -50,7 +47,7 @@ public class TpaCommand implements CommandExecutor {
                     int cooldown = MainBukkit.config.getInt("teleport.cooldown");
                     long now = System.currentTimeMillis() / 1000;
 
-                    if (sender.getName().equals(target.getName())){
+                    if (sender.getName().equals(target.getName())) {
                         if (!sender.hasPermission("ulity.teleport.bypass-cooldown")) {
                             int last = MainBukkit.temp.getInt("player." + sender.getName() + ".lastTeleport");
 

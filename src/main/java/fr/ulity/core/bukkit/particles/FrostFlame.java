@@ -1,9 +1,7 @@
 package fr.ulity.core.bukkit.particles;
 
 import fr.ulity.core.bukkit.MainBukkit;
-import fr.ulity.core.bukkit.particles.utils.MathUtils;
 import fr.ulity.core.bukkit.particles.utils.UtilParticle;
-import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
@@ -12,13 +10,14 @@ import org.bukkit.util.Vector;
 
 public class FrostFlame {
 
-    public static void run (Player player){
+    public static void run(Player player) {
         run(player.getLocation());
     }
 
-    public static void run (Location loc){
+    public static void run(Location loc) {
         new BukkitRunnable() {
             double t = 0.0D;
+
             public void run() {
                 t += 0.3;
                 for (double phi = 0.0D; phi <= 6; phi += 1.5) {

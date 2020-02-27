@@ -5,12 +5,12 @@ import de.leonhard.storage.Yaml;
 public class Config extends Yaml {
     private static Config config;
 
-    public Config(){
+    public Config() {
         super("config", Api.prefix + "/");
         new DefaultConfig();
     }
 
-    public Config(String name){
+    public Config(String name) {
         super(name, Api.prefix + "/");
 
         if (name.equals("config"))
@@ -26,7 +26,6 @@ public class Config extends Yaml {
             new DefaultConfig();
 
     }
-
 
 
 }

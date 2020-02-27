@@ -4,7 +4,7 @@ import org.bukkit.GameMode;
 
 public class Normalize {
 
-    public static GameMode getGamemode (String gm){
+    public static GameMode getGamemode(String gm) {
         if (gm.equals(Lang.get("gamemode.creative")) || gm.equals("creative") || gm.equals("1"))
             return GameMode.CREATIVE;
         if (gm.equals(Lang.get("gamemode.survival")) || gm.equals("survival") || gm.equals("0"))
@@ -16,7 +16,7 @@ public class Normalize {
         return null;
     }
 
-    public static String getGamemode (GameMode gm){
+    public static String getGamemode(GameMode gm) {
         if (gm.equals(GameMode.CREATIVE))
             return Lang.get("gamemode.creative");
         if (gm.equals(GameMode.SURVIVAL))

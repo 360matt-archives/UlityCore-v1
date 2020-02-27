@@ -1,13 +1,11 @@
 package fr.ulity.core.bukkit.commands.principal;
 
-import fr.ulity.core.api.Config;
 import fr.ulity.core.api.Lang;
 import fr.ulity.core.api.Permission;
+import fr.ulity.core.bukkit.MainBukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
-import fr.ulity.core.bukkit.MainBukkit;
 
 
 public class UlityCoreCommand implements CommandExecutor {
@@ -15,7 +13,7 @@ public class UlityCoreCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length == 0) {
-            switch(Lang.lang) {
+            switch (Lang.lang) {
                 case "fr":
                     sender.sendMessage("§bUlityCore §7est créé par §c360matt");
                     sender.sendMessage("§7Version: §av" + MainBukkit.plugin.getDescription().getVersion());
@@ -27,9 +25,8 @@ public class UlityCoreCommand implements CommandExecutor {
                     sender.sendMessage("§7This plugin is a fonctionnality's library.");
 
             }
-        }
-        else
-            switch(args[0]) {
+        } else
+            switch (args[0]) {
                 case "reload":
                 case "rl":
                     if (Permission.isAdmin_error(sender)) {

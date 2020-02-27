@@ -5,19 +5,17 @@ import de.leonhard.storage.Yaml;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
-import java.util.ArrayList;
 
 public class Lang {
     public static Config langC;
     public static String lang;
 
-    public Lang (){
+    public Lang() {
         reload();
     }
 
-    public static void reload (){
+    public static void reload() {
         lang = new Config().getString("global.lang");
 
         InputStream reference = Lang.class.getResourceAsStream("/languages/" + Api.type + "/" + lang + ".yml");
@@ -25,7 +23,7 @@ public class Lang {
         File file = new File(Api.prefix + "/languages/" + lang + ".yml");
         file.getParentFile().mkdirs();
 
-        if (reference != null){
+        if (reference != null) {
             Yaml ref;
 
             if (file.exists()) {
@@ -47,11 +45,10 @@ public class Lang {
 
                 langC = new Config(lang, "languages");
 
-                for (String i : ref.keySet()){
+                for (String i : ref.keySet()) {
                     langC.setDefault(i, ref.getString(i));
                 }
-            }
-            else{
+            } else {
                 try {
                     Files.copy(reference, file.getAbsoluteFile().toPath());
                     langC = new Config(lang, "languages");
@@ -60,12 +57,11 @@ public class Lang {
                     e.printStackTrace();
                 }
             }
-        }
-        else
+        } else
             langC = new Config(lang, "languages");
     }
 
-    public static String get (String key){
+    public static String get(String key) {
         String value = langC.getString(key);
 
         return value
@@ -73,15 +69,15 @@ public class Lang {
                 .replaceAll("§§", "&");
     }
 
-    public static void set (String key, String value){
+    public static void set(String key, String value) {
         langC.set(key, value);
     }
 
-    public static void setDefault (String key, String value){
+    public static void setDefault(String key, String value) {
         langC.setDefault(key, value);
     }
 
-    public static boolean isSet (String key){
+    public static boolean isSet(String key) {
         return langC.getString(key) != null;
     }
 

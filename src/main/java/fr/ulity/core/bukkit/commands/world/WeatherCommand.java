@@ -25,8 +25,7 @@ public class WeatherCommand implements CommandExecutor {
                 sender.sendMessage(Syntax.notice(cmd.getName(), new String[]{"world"}));
                 return true;
             }
-        else
-        if (args.length == 1)
+        else if (args.length == 1)
             world = MainBukkit.server.getWorld(args[0]);
         else if (args.length == 0)
             world = ((Player) sender).getWorld();
@@ -35,7 +34,7 @@ public class WeatherCommand implements CommandExecutor {
             return true;
         }
 
-        if (world == null){
+        if (world == null) {
             sender.sendMessage(Lang.get("error.invalid_world").replaceAll("%world%", args[0]));
             return true;
         }
@@ -46,16 +45,13 @@ public class WeatherCommand implements CommandExecutor {
         world.setThunderDuration(duration);
 
 
-
         if (cmd.getName().equals("sun")) {
             world.setStorm(false);
             world.setThundering(false);
-        }
-        else if (cmd.getName().equals("rain")) {
+        } else if (cmd.getName().equals("rain")) {
             world.setStorm(true);
             world.setThundering(false);
-        }
-        else {
+        } else {
             world.setStorm(true);
             world.setThundering(true);
         }

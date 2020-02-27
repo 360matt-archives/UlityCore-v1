@@ -15,12 +15,12 @@ public class BackCommand implements CommandExecutor {
 
         if (!(sender instanceof Player))
             sender.sendMessage(Lang.get("error.player_only"));
-        else{
+        else {
             Location location = (Location) MainBukkit.temp.get("player." + sender.getName() + ".lastPosition");
 
             if (location == null)
                 sender.sendMessage(Lang.get("commands.back.no_last_position"));
-            else{
+            else {
                 ((Player) sender).teleport(location);
                 sender.sendMessage(Lang.get("commands.back.teleported"));
             }

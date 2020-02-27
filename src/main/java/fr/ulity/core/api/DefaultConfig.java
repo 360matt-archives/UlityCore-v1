@@ -3,7 +3,7 @@ package fr.ulity.core.api;
 import de.leonhard.storage.Yaml;
 
 public class DefaultConfig extends Yaml {
-    DefaultConfig (){
+    DefaultConfig() {
         super("config", Api.prefix);
 
         if (Api.type.equals("bungeecord"))
@@ -12,7 +12,7 @@ public class DefaultConfig extends Yaml {
             isBukkit();
     }
 
-    public void isBukkit(){
+    public void isBukkit() {
         setDefault("global.lang", "fr");
         setDefault("global.server-name", "&e[Beautiful server] ");
         setDefault("teleport.delay", 5);
@@ -21,8 +21,8 @@ public class DefaultConfig extends Yaml {
         setDefault("teleport.animation", true);
     }
 
-    public void isBungee(){
-
+    public void isBungee() {
+        setDefault("global.lang", "fr");
     }
 
 

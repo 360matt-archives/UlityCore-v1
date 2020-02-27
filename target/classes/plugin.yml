@@ -57,33 +57,10 @@ commands:
     permissions:
       - admin
       - ulity.gmp
-  importlang:
-    permissions:
-      - admin
   heal:
     permissions:
       - admin
       - ulity.heal
-  ban:
-    permissions:
-      - mod
-      - ulity.ban
-  unban:
-    aliases:
-      - pardon
-    permissions:
-      - mod
-      - ulity.unban
-  tempban:
-    aliases:
-      - tban
-    permissions:
-      - mod
-      - ulity.tempban
-  kick:
-    permissions:
-      - mod
-      - ulity.kick
   sun:
     permissions:
       - admin

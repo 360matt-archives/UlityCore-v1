@@ -11,15 +11,14 @@ import org.bukkit.entity.Player;
 
 public class TpCommand implements CommandExecutor {
 
-    private void single_teleport (CommandSender sender, String[] args){
+    private void single_teleport(CommandSender sender, String[] args) {
         Player origin = MainBukkit.server.getPlayer(args[0]);
         Player target = MainBukkit.server.getPlayer(args[1]);
 
-        if (origin == null){
+        if (origin == null) {
             sender.sendMessage(Lang.get("error.invalid_player").replaceAll("%name%", args[0]));
             return;
-        }
-        else if (target == null){
+        } else if (target == null) {
             sender.sendMessage(Lang.get("error.invalid_player").replaceAll("%name%", args[1]));
             return;
         }
@@ -33,9 +32,7 @@ public class TpCommand implements CommandExecutor {
             sender.sendMessage(Lang.get("commands.teleport.sender.to_player")
                     .replaceAll("%name%", origin.getName())
                     .replaceAll("%target%", target.getName()));
-
     }
-
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -43,16 +40,14 @@ public class TpCommand implements CommandExecutor {
         Player origin;
         Player target;
 
-        if (!(sender instanceof Player)){
-            if (args.length != 2){
+        if (!(sender instanceof Player)) {
+            if (args.length != 2) {
                 sender.sendMessage(Syntax.notice(cmd.getName(), new String[]{"player", "player"}));
                 return true;
-            }
-            else
+            } else
                 single_teleport(sender, args);
-        }
-        else{
-            if (args.length == 3 || args.length == 4){
+        } else {
+            if (args.length == 3 || args.length == 4) {
                 int x;
                 int y;
                 int z;
@@ -61,20 +56,19 @@ public class TpCommand implements CommandExecutor {
                     x = Integer.parseInt(args[0]);
                     y = Integer.parseInt(args[1]);
                     z = Integer.parseInt(args[2]);
-                }
-                catch (NumberFormatException e){
+                } catch (NumberFormatException e) {
                     sender.sendMessage(Lang.get("commands.teleport.syntax_player"));
                     return true;
                 }
 
                 Location location = new Location(((Player) sender).getWorld(), x, y, z);
 
-                if (args.length == 4){
+                if (args.length == 4) {
                     origin = MainBukkit.server.getPlayer(args[3]);
 
                     if (origin == null)
                         sender.sendMessage(Lang.get("error.invalid_player").replaceAll("%name%", args[3]));
-                    else{
+                    else {
                         origin.teleport(location);
                         origin.sendMessage(Lang.get("commands.teleport.notification.to_coords"));
 
@@ -82,32 +76,27 @@ public class TpCommand implements CommandExecutor {
                             sender.sendMessage(Lang.get("commands.teleport.sender.to_coords")
                                     .replaceAll("%name%", origin.getName()));
                     }
-                }
-                else{
+                } else {
                     ((Player) sender).teleport(location);
                     sender.sendMessage(Lang.get("commands.teleport.notification.to_coords"));
                 }
-            }
-            else if (args.length == 2)
+            } else if (args.length == 2)
                 single_teleport(sender, args);
-            else if (args.length == 1){
+            else if (args.length == 1) {
                 target = MainBukkit.server.getPlayer(args[0]);
 
-                if (target == null){
+                if (target == null) {
                     sender.sendMessage(Lang.get("error.invalid_player").replaceAll("%name%", args[0]));
                     return true;
-                }
-                else{
+                } else {
                     ((Player) sender).teleport(target);
 
                     sender.sendMessage(Lang.get("commands.teleport.notification.to_player")
                             .replaceAll("%name%", target.getName()));
                 }
-            }
-            else
+            } else
                 sender.sendMessage(Lang.get("commands.teleport.syntax_player"));
         }
-
 
         return true;
     }

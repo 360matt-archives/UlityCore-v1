@@ -16,7 +16,7 @@ import fr.ulity.core.bukkit.commands.world.WeatherCommand;
 
 public class RegisterCommands {
 
-    public static void exec (){
+    public static void exec() {
         MainBukkit.plugin.getCommand("ulitycore").setExecutor(new UlityCoreCommand());
         MainBukkit.plugin.getCommand("gamemode").setExecutor(new GamemodeCommand());
 

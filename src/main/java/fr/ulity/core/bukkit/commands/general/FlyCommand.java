@@ -4,7 +4,6 @@ import fr.ulity.core.api.Lang;
 import fr.ulity.core.api.Syntax;
 import fr.ulity.core.bukkit.MainBukkit;
 import org.bukkit.command.Command;
-
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -32,7 +31,7 @@ public class FlyCommand implements CommandExecutor {
             }
         }
 
-        if (target == null){
+        if (target == null) {
             sender.sendMessage(Lang.get("error.invalid_player")
                     .replaceAll("%name%", args[1]));
             return true;
@@ -40,11 +39,10 @@ public class FlyCommand implements CommandExecutor {
 
         String mod;
 
-        if (target.getAllowFlight()){
+        if (target.getAllowFlight()) {
             mod = Lang.get("stats.disabled_colored");
             target.setAllowFlight(false);
-        }
-        else{
+        } else {
             mod = Lang.get("stats.enabled_colored");
             target.setAllowFlight(true);
         }

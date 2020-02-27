@@ -13,17 +13,17 @@ public class TpNoCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (!(sender instanceof Player)){
+        if (!(sender instanceof Player)) {
             sender.sendMessage(Lang.get("error.player_only"));
             return true;
         }
 
-        if (MainBukkit.temp.get("player." + sender.getName() + ".lastTpRequest") == null){
+        if (MainBukkit.temp.get("player." + sender.getName() + ".lastTpRequest") == null) {
             sender.sendMessage(Lang.get("commands.tpno.no_request"));
             return true;
         }
 
-        if ((MainBukkit.temp.getInt("player." + sender.getName() + ".lastTpRequest.timestamp") + MainBukkit.config.getInt("teleportation.timeout")) > new Date().getTime()){
+        if ((MainBukkit.temp.getInt("player." + sender.getName() + ".lastTpRequest.timestamp") + MainBukkit.config.getInt("teleportation.timeout")) > new Date().getTime()) {
             sender.sendMessage(Lang.get("commands.teleport.timed_out"));
             return true;
         }
