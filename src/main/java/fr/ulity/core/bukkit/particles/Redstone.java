@@ -8,6 +8,9 @@ import org.bukkit.entity.Player;
 import static fr.ulity.core.bukkit.particles.utils.MathUtils.randomRange;
 
 public class Redstone {
+    // code by: https://www.spigotmc.org/members/julien0312.80619/
+    // je suis pas un batard je fournie mes sources
+    // toutes les particles viennent de cette personne
 
     public static void run(Player player) {
         run(player.getLocation());

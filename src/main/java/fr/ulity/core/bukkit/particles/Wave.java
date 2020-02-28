@@ -9,6 +9,9 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 public class Wave {
+    // code by: https://www.spigotmc.org/members/julien0312.80619/
+    // je suis pas un batard je fournie mes sources
+    // toutes les particles viennent de cette personne
 
     public static void run(Player player) {
         run(player.getLocation());

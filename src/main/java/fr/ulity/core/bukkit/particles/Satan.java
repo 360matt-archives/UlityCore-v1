@@ -18,6 +18,10 @@ import java.util.ArrayList;
 
 
 public class Satan {
+    // code by: https://www.spigotmc.org/members/julien0312.80619/
+    // je suis pas un batard je fournie mes sources
+    // toutes les particles viennent de cette personne
+
     public static ArrayList<ArmorStand> as = new ArrayList<>();
 
     @SuppressWarnings("deprecation")
@@ -31,7 +35,7 @@ public class Satan {
 
         ArmorStand armor = (ArmorStand) loc.getWorld().spawnEntity(loc, EntityType.ARMOR_STAND);
         armor.setVisible(false);
-        armor.setCustomName("�c�l" + player.getName());
+        armor.setCustomName("§c§l" + player.getName());
         armor.setCustomNameVisible(true);
         armor.setHelmet(skull);
         armor.setGravity(false);
