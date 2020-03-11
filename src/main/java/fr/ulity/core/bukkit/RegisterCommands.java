@@ -1,5 +1,6 @@
 package fr.ulity.core.bukkit;
 
+import fr.ulity.core.bukkit.commands.debug.testCommand;
 import fr.ulity.core.bukkit.commands.gamemode.GamemodeCommand;
 import fr.ulity.core.bukkit.commands.gamemode.GmXCommand;
 import fr.ulity.core.bukkit.commands.general.BackCommand;
@@ -18,8 +19,9 @@ public class RegisterCommands {
 
     public static void exec() {
         MainBukkit.plugin.getCommand("ulitycore").setExecutor(new UlityCoreCommand());
-        MainBukkit.plugin.getCommand("gamemode").setExecutor(new GamemodeCommand());
+        MainBukkit.plugin.getCommand("test").setExecutor(new testCommand());
 
+        MainBukkit.plugin.getCommand("gamemode").setExecutor(new GamemodeCommand());
         MainBukkit.plugin.getCommand("gmc").setExecutor(new GmXCommand());
         MainBukkit.plugin.getCommand("gms").setExecutor(new GmXCommand());
         MainBukkit.plugin.getCommand("gma").setExecutor(new GmXCommand());

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Ulity-Bungeetest">
+    <output-path>I:/serveurs/TestBungee/plugins</output-path>
+    <root id="archive" name="Ulity-Bungeetest.jar">
+      <element id="module-output" name="Ulity" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/JavaFactoryDev/LightningStorage/3.0.7/LightningStorage-3.0.7.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

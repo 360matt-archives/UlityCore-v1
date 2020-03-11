@@ -21,6 +21,7 @@ public class Squid {
 
     public static ArrayList<ArmorStand> as = new ArrayList<>();
 
+    @SuppressWarnings("deprecation")
     public static void run(Player player) {
         Location loc = player.getLocation().add(0, -0.3, 0);
 

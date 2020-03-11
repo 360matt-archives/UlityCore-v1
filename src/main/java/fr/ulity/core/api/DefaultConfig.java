@@ -19,6 +19,8 @@ public class DefaultConfig extends Yaml {
         setDefault("teleport.timeout", 60);
         setDefault("teleport.cooldown", 60);
         setDefault("teleport.animation", true);
+        setDefault("animations.death.player", true);
+        setDefault("animations.death.mobs", true);
     }
 
     public void isBungee() {

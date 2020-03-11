@@ -12,89 +12,89 @@ commands:
     aliases:
       - uc
   clc:
-    permissions:
+    permission:
       - mod
       - ulity.clcs
   day:
-    permissions:
+    permission:
       - admin
       - ulity.day
   night:
-    permissions:
+    permission:
       - admin
       - ulity.night
   broadcast:
-    permissions:
+    permission:
       - mod
       - ulity.broadcast
       - ulity.bc
     aliases:
       - bc
   fly:
-    permissions:
+    permission:
       - admin
       - ulity.fly
   gamemode:
     aliases:
       - gm
-    permissions:
+    permission:
       - admin
       - ulity.gamemode
       - ulity.gm
   gmc:
-    permissions:
+    permission:
       - admin
       - ulity.gmc
   gms:
-    permissions:
+    permission:
       - admin
       - ulity.gms
   gma:
-    permissions:
+    permission:
       - admin
       - ulity.gma
   gmp:
-    permissions:
+    permission:
       - admin
       - ulity.gmp
   heal:
-    permissions:
+    permission:
       - admin
       - ulity.heal
   sun:
-    permissions:
+    permission:
       - admin
       - ulity.sun
   rain:
-    permissions:
+    permission:
       - admin
       - ulity.rain
   storm:
-    permissions:
+    permission:
       - admin
       - ulity.storm
   back:
-    permissions:
+    permission:
       - plus
       - ulity.back
   teleport:
     aliases:
       - tp
-    permissions:
+    permission:
       - cheat
       - ulity.teleport
   tpa:
-    permissions:
+    permission:
       - player
       - ulity.tpa
   tpyes:
-    permissions:
+    permission:
       - player
       - ulity.tpyes
   tpno:
-    permissions:
+    permission:
       - player
       - ulity.tpno
   test:
-    permissions:
+    permission:
       - ulityowner
