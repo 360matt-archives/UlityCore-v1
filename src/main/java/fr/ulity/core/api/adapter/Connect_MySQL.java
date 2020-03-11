@@ -7,40 +7,36 @@
 
 package fr.ulity.core.api.adapter;
 
-import java.sql.ResultSet;
-import java.sql.Statement;
-
 import fr.ulity.core.api.Api;
 import fr.ulity.core.api.Config;
 import fr.ulity.core.api.Lang;
+import org.jetbrains.annotations.NotNull;
 
-import java.sql.DriverManager;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Connect_MySQL {
-    private static Connection con;
+    public static Connection con;
 
-    public static Connection getConnection() {
-        return Connect_MySQL.con;
-    }
-
-    public static void setConnection(final String host, final String user, final String password, final String database, final String port, final String ssl) {
-        if (host == null || user == null || password == null || database == null)
-            return;
+    public static boolean setConnection(@NotNull final String host, @NotNull final String user, @NotNull final String password, @NotNull final String database, @NotNull final String port, @NotNull final String ssl) {
         disconnect(false);
         try {
-            Connect_MySQL.con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?autoReconnect=true&useSSL=" + ssl, user, password);
+            con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database + "?autoReconnect=true&useSSL=" + ssl, user, password);
             System.out.println(MultiLang.getExp("connected"));
+            return true;
         } catch (Exception e) {
             System.out.println(MultiLang.getExp("connect_error") + " " + e.getMessage());
+            return false;
         }
     }
 
-    public static void connect() {
-        connect(true);
+    public static boolean connect() {
+        return connect(true);
     }
 
-    private static void connect(final boolean message) {
+    private static boolean connect(final boolean message) {
 
         Config mySQL_cfg = new Config("mysql");
 
@@ -67,7 +63,8 @@ public class Connect_MySQL {
         else if (ssl.equalsIgnoreCase(""))
             System.out.println(MultiLang.getExp("ssl_blank"));
         else
-            setConnection(host, user, password, database, port, ssl);
+            return setConnection(host, user, password, database, port, ssl);
+        return false;
     }
 
     public static void disconnect() {
@@ -77,7 +74,7 @@ public class Connect_MySQL {
     private static void disconnect(final boolean message) {
         try {
             if (isConnected()) {
-                Connect_MySQL.con.close();
+                con.close();
                 if (message)
                     System.out.println(MultiLang.getExp("disconnected"));
             }
@@ -85,7 +82,7 @@ public class Connect_MySQL {
             if (message)
                 System.out.println(MultiLang.getExp("disconnect_error") + " " + e.getMessage());
         }
-        Connect_MySQL.con = null;
+        con = null;
     }
 
     public static void reconnect() {
@@ -94,9 +91,9 @@ public class Connect_MySQL {
     }
 
     public static boolean isConnected() {
-        if (Connect_MySQL.con != null) {
+        if (con != null) {
             try {
-                return !Connect_MySQL.con.isClosed();
+                return !con.isClosed();
             } catch (Exception e) {
                 System.out.println(MultiLang.getExp("mysql_connection"));
                 System.out.println(MultiLang.getExp("error") + " " + e.getMessage());
@@ -105,13 +102,11 @@ public class Connect_MySQL {
         return false;
     }
 
-    public static boolean update(final String command) {
-        if (command == null)
-            return false;
+    public static boolean update(@NotNull final String command) {
         boolean result = false;
         connect(false);
         try {
-            final Statement st = getConnection().createStatement();
+            final Statement st = con.createStatement();
             st.executeUpdate(command);
             st.close();
             result = true;
@@ -124,14 +119,11 @@ public class Connect_MySQL {
         return result;
     }
 
-    public static ResultSet query(final String command) {
-        if (command == null) {
-            return null;
-        }
+    public static ResultSet query(@NotNull final String command) {
         connect(false);
         ResultSet rs = null;
         try {
-            final Statement st = getConnection().createStatement();
+            final Statement st = con.createStatement();
             rs = st.executeQuery(command);
         } catch (Exception e) {
             System.out.println("§cMySQL Query:");
