@@ -7,6 +7,7 @@ import fr.ulity.core.bukkit.commands.general.BackCommand;
 import fr.ulity.core.bukkit.commands.general.FlyCommand;
 import fr.ulity.core.bukkit.commands.moderation.BroadcastCommand;
 import fr.ulity.core.bukkit.commands.moderation.ClcCommand;
+import fr.ulity.core.bukkit.commands.plus.HealCommand;
 import fr.ulity.core.bukkit.commands.principal.UlityCoreCommand;
 import fr.ulity.core.bukkit.commands.teleportation.TpCommand;
 import fr.ulity.core.bukkit.commands.teleportation.TpNoCommand;
@@ -44,6 +45,8 @@ public class RegisterCommands {
         MainBukkit.plugin.getCommand("tpa").setExecutor(new TpaCommand());
         MainBukkit.plugin.getCommand("tpyes").setExecutor(new TpYesCommand());
         MainBukkit.plugin.getCommand("tpno").setExecutor(new TpNoCommand());
+
+        MainBukkit.plugin.getCommand("heal").setExecutor(new HealCommand());
 
     }
 

@@ -27,5 +27,12 @@ public class Config extends Yaml {
 
     }
 
+    public boolean isSet(String key) {
+        return get(key) != null;
+    }
+
+    public void delete(String key) {
+        set(key, null);
+    }
 
 }

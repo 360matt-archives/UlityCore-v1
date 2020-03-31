@@ -1,5 +1,5 @@
 name: UlityCore
-version: 0.2.3-SNAPSHOT
+version: ${project.version}
 main: fr.ulity.core.bukkit.MainBukkit
 api-version: 1.15
 prefix: Ulity

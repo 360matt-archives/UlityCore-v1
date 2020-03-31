@@ -2,8 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/fr/ulity/core/bukkit/RegisterCommands.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/languages/bukkit/fr.yml" charset="UTF-8" />
-    <file url="PROJECT" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/languages/bukkit/fr.yml" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/languages/bungeecord/fr.yml" charset="windows-1252" />
   </component>
 </project>

@@ -1,7 +1,5 @@
 package fr.ulity.core.api;
 
-import de.leonhard.storage.Yaml;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,49 +14,28 @@ public class Lang {
     }
 
     public static void reload() {
-        lang = new Config().getString("global.lang");
+        lang = Api.config.getString("global.lang");
 
-        InputStream reference = Lang.class.getResourceAsStream("/languages/" + Api.type + "/" + lang + ".yml");
+        langC = new Config(lang, "languages");
 
-        File file = new File(Api.prefix + "/languages/" + lang + ".yml");
-        file.getParentFile().mkdirs();
+        try {
+            InputStream reference = Lang.class.getResourceAsStream("/languages/" + Api.type + "/" + lang + ".yml");
 
-        if (reference != null) {
-            Yaml ref;
+            if (reference != null) {
+                File tempo = new File(Api.prefix + "/temps/" + lang + "_tmp.yml");
 
-            if (file.exists()) {
-                file = new File(Api.prefix + "/temps/" + lang + "_tmp.yml");
-                file.getParentFile().mkdirs();
+                if (tempo.exists())
+                    tempo.delete();
+                Files.copy(reference, tempo.toPath());
 
-                if (file.exists())
-                    file.delete();
-                try {
-                    Files.copy(reference, file.getAbsoluteFile().toPath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Config tempoC = new Config(lang + "_tmp.yml", "temps");
 
-                File temp = new File(Api.prefix + "/languages/" + lang + ".yml");
-                temp.mkdirs();
-
-                ref = new Config(lang + "_tmp", "/temps");
-
-                langC = new Config(lang, "languages");
-
-                for (String i : ref.keySet()) {
-                    langC.setDefault(i, ref.getString(i));
-                }
-            } else {
-                try {
-                    Files.copy(reference, file.getAbsoluteFile().toPath());
-                    langC = new Config(lang, "languages");
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                for (String i : tempoC.keySet())
+                    langC.setDefault(i, tempoC.getString(new String(i.getBytes(), System.getProperty("file.encoding", "ISO-8859-1"))));
             }
-        } else
-            langC = new Config(lang, "languages");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String get(String key) {

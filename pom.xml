@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.ulity.core</groupId>
-    <artifactId>fr.ulity.core</artifactId>
+    <groupId>fr.ulity</groupId>
+    <artifactId>UlityCore</artifactId>
     <version>0.2.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Fr.ulity.core</name>
+    <name>UlityCore</name>
 
     <description>Plugin essentiel gorgé de commandes et librairie principale des plugins de la gamme d'ulity
     </description>
@@ -20,7 +20,6 @@
     <url>https://ulity.fr</url>
 
     <build>
-        <defaultGoal>clean package</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -31,21 +30,7 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
-                <configuration>
-                    <shadedArtifactAttached>false</shadedArtifactAttached>
-                </configuration>
-            </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
     </build>
     <repositories>
         <repository>
@@ -76,7 +61,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
+            <version>19.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -102,8 +87,9 @@
         <dependency>
             <groupId>com.github.JavaFactoryDev</groupId>
             <artifactId>LightningStorage</artifactId>
-            <version>3.0.7</version>
+            <version>3.0.9</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
 </project>

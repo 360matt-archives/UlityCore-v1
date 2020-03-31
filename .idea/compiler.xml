@@ -9,11 +9,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Ulity" />
+        <module name="UlityCore" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bukkit" target="1.8" />
+      <module name="core" target="1.8" />
+      <module name="fr.ulity.core" target="1.8" />
       <module name="Ulity" target="1.8" />
+      <module name="UlityCore" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

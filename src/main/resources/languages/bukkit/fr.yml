@@ -1,7 +1,7 @@
 expressions:
   period:
-    year: annÃ©e
-    years: annÃ©es
+    year: année
+    years: années
     month: mois
     months: mois
     day: jour
@@ -16,29 +16,29 @@ expressions:
   unknown: inconnu
   unknown_reason: raison inconnue
 stats:
-  enabled: "activÃ©"
-  disabled: "dÃ©sactivÃ©"
-  enabled_colored: "&aactivÃ©"
-  disabled_colored: "&cdÃ©sactivÃ©"
+  enabled: "activé"
+  disabled: "désactivé"
+  enabled_colored: "&aactivé"
+  disabled_colored: "&cdésactivé"
 format:
   player: joueur
   world: monde
   text: texte
 plugin:
-  reloaded: "&7Le plugin a bien Ã©tÃ© rechargÃ©"
-  no_perm: "&cVous n'Ãªtes pas en mesure de faire cela"
-  actual_lang: "&7La langue actuelle est le &bFranÃ§ais (FR)"
-  lang_reloaded: "&7La langue a Ã©tÃ© rechargÃ©e en &bFranÃ§ais (FR)"
+  reloaded: "&7Le plugin a bien été rechargé"
+  no_perm: "&cVous n'êtes pas en mesure de faire cela"
+  actual_lang: "&7La langue actuelle est le &bFrançais (FR)"
+  lang_reloaded: "&7La langue a été rechargée en &bFrançais (FR)"
   syntax_notice: "&cSyntaxe: %syntax%"
 gamemode:
-  creative: crÃ©atif
+  creative: créatif
   survival: survie
   adventure: aventure
-  spectator: spÃ©ctateur
+  spectator: spéctateur
 commands:
   gamemode:
-    notification: "&7Votre mode de jeu a Ã©tÃ© changÃ© en &6%gamemode%"
-    changed_player: "&7Mode de jeu de &b%player% &7changÃ© en &6%gamemode%"
+    notification: "&7Votre mode de jeu a été changé en &6%gamemode%"
+    changed_player: "&7Mode de jeu de &b%player% &7changé en &6%gamemode%"
     invalid_gamemode: "&cLe mode de jeu &6%gamemode% &cest invalide"
     no_perm_other: "&7Vous ne pouvez pas changer le gamemode d'un autre joueur"
   fly:
@@ -46,24 +46,24 @@ commands:
     notification: "&7Votre mode fly est %stat%"
     changed_player: "&7Le mode fly de &b%player% &7est %stat%"
   clc:
-    cleared: "&7Le chat a Ã©tÃ© clear par &b%staff% &7pour &c%reason%"
+    cleared: "&7Le chat a été clear par &b%staff% &7pour &c%reason%"
   time:
-    changed: "&7Il fait dÃ©sormais &e%time% &7dans le monde &6%world%"
+    changed: "&7Il fait désormais &e%time% &7dans le monde &6%world%"
     day: jour
     night: nuit
   weather:
-    changed: "&7Le temps est dÃ©fini &e%weather% &7dans le monde &6%world%"
-    sun: "ensoleillÃ©"
+    changed: "&7Le temps est défini &e%weather% &7dans le monde &6%world%"
+    sun: "ensoleillé"
     rain: "pluvieux"
     storm: "orageux"
   back:
-    no_last_position: "&cVous n'avez pas de lieu Ã  retourner"
-    teleported: "&7Vous avez Ã©tÃ© tÃ©lÃ©portÃ© Ã  votre dernier emplacement"
+    no_last_position: "&cVous n'avez pas de lieu à retourner"
+    teleported: "&7Vous avez été téléporté à votre dernier emplacement"
   teleport:
-    no_perm_other: "&7Vous ne pouvez pas tÃ©lÃ©porter un autre joueur"
-    timed_out: "&cLe temps d'attente est Ã©coulÃ© depuis la derniÃ¨re demande"
-    already_sent: "&cVous avez dÃ©jÃ  envoyÃ© une demande Ã  ce joueur"
-    response_sent: "&7Votre rÃ©ponse a Ã©tÃ© envoyÃ©e"
+    no_perm_other: "&7Vous ne pouvez pas téléporter un autre joueur"
+    timed_out: "&cLe temps d'attente est écoulé depuis la dernière demande"
+    already_sent: "&cVous avez déjà envoyé une demande à ce joueur"
+    response_sent: "&7Votre réponse a été envoyée"
 
 
     syntax_player: "&6Voici les syntaxes de cette commande:\n
@@ -71,31 +71,34 @@ commands:
     &c&k** &8/tp &7joueur &3[cible]\n"
 
     notification:
-      to_coords: "&7TÃ©lÃ©portation aux coordonnÃ©es demandÃ©e en cours ..."
-      to_player: "&7TÃ©lÃ©portation au joueur &b%name% &7en cours ..."
+      to_coords: "&7Téléportation aux coordonnées demandée en cours ..."
+      to_player: "&7Téléportation au joueur &b%name% &7en cours ..."
 
     sender:
-      to_coords: "&7TÃ©lÃ©portation de &b%name% &7aux coordonnÃ©es donnÃ©es"
-      to_player: "&7TÃ©lÃ©portation de &b%name% &7vers &b%target%"
+      to_coords: "&7Téléportation de &b%name% &7aux coordonnées données"
+      to_player: "&7Téléportation de &b%name% &7vers &b%target%"
   tpa:
-    request: "&b%name% &7souhaite se tÃ©lÃ©porter Ã  vous\n
+    request: "&b%name% &7souhaite se téléporter à vous\n
         &7Vous avez &e%seconds% secondes &7pour accepter\n
         &7Commandes: &a/tpyes &7ou &c/tpno"
-    request_sent: "&7La demande a Ã©tÃ© envoyÃ©e Ã  &b%name%"
+    request_sent: "&7La demande a été envoyée à &b%name%"
   tpyes:
-    waiting_delay: "&7Vous serez tÃ©lÃ©portÃ© dans &e%seconds% secondes"
-    no_request: "&cVous n'avez pas de demande Ã  accepter"
+    waiting_delay: "&7Vous serez téléporté dans &e%seconds% secondes"
+    no_request: "&cVous n'avez pas de demande à accepter"
   tpno:
-    no_request: "&cVous n'avez pas de demande Ã  refuser"
-    request_refused: "&7Votre demande de tÃ©lÃ©portation a Ã©tÃ© &crefusÃ©e"
-
+    no_request: "&cVous n'avez pas de demande à refuser"
+    request_refused: "&7Votre demande de téléportation a été &crefusée"
+  heal:
+    no_perm_other: "&7Vous ne pouvez pas guérir un autre joueur"
+    healed: "&7Vous avez été guéris et nourris"
+    healed_other: "&7Vous avez guéri et nourris &b%name%"
 
 error:
   invalid_player: "&cLe joueur &6%name% &cest invalide"
   invalid_world: "&cLe monde &6%world% &cest invalide"
   empty_arg: "&cOoh non, l'argument est vide"
   player_only: "&cSeul les joueurs peuvent faire cela"
-  player_disconnected: "&cLe joueur &7%name% &cs'est dÃ©connectÃ©"
-  x_bloqued_by_x: "&b%name1% &ca Ã©tÃ© bloquÃ© par &b%name2%"
-  your_bloqued_by_x: "&cVous avez Ã©tÃ© bloquÃ© par &b%name%"
+  player_disconnected: "&cLe joueur &7%name% &cs'est déconnecté"
+  x_bloqued_by_x: "&b%name1% &ca été bloqué par &b%name2%"
+  your_bloqued_by_x: "&cVous avez été bloqué par &b%name%"
   cooldown: "&cTu dois attendre &e%time% &cpour refaire cela"
